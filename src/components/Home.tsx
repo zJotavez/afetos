@@ -1,11 +1,18 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { FadeIn } from './FadeIn';
+import { useSEO } from '../hooks/useSEO';
 
 export function Home() {
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 1000], [0, 300]);
   const [activeVideoId, setActiveVideoId] = React.useState<string | null>(null);
+
+  useSEO({
+    title: "Eternizando Histórias Reais",
+    description: "Afetos Eternos - Fotografia e Cinematografia de casamento Fine Art por Jader Figueiredo. Registramos sentimentos espontâneos com sensibilidade e estética cinematográfica nobre.",
+    image: "https://afetos-casamentos.vercel.app/logo.jpg"
+  });
 
   return (
     <div className="w-full">

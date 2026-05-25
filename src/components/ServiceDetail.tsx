@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Camera, Video, Sparkles, Heart, ArrowLeft, Calendar } from 'lucide-react';
 import { FadeIn } from './FadeIn';
+import { useSEO } from '../hooks/useSEO';
 
 interface ServiceData {
   slug: string;
@@ -22,7 +23,7 @@ const servicesData: Record<string, ServiceData> = {
     title: 'Wedding Film',
     subtitle: 'Edição Cinematográfica',
     description: 'Produção cinematográfica com roteiro emocional, capturando a essência e o ritmo único do seu dia. Transformamos o dia mais feliz da sua vida em um filme de cinema.',
-    details: 'Nosso processo de criação de vídeo baseia-se em capturar sentimentos verdadeiros, sem poses artificiais. Utilizamos equipamentos de ponta de cinema digital, lentes anamórficas e uma gradagem de cores minuciosa e artística para que seu filme pareça uma produção de cinema de herança. A edição é ritmada pelo áudio original dos seus votos e discursos, compondo uma obra inestimável.',
+    details: 'Nosso processo de criação de vídeo baseia-se em capturar sentimentos verdadeiros, sem poses artificiais. Utilizamos equipamentos de ponta de cinema digital, lentes anamórficas e uma gradagem de cores minuciosa e artística para que seu filme pareça uma production de cinema de herança. A edição é ritmada pelo áudio original dos seus votos e discursos, compondo uma obra inestimável.',
     icon: <Video className="w-8 h-8 text-brand-gold" />,
     image: 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2670&auto=format&fit=crop',
     includes: [
@@ -107,6 +108,12 @@ const servicesData: Record<string, ServiceData> = {
 export function ServiceDetail() {
   const { slug } = useParams<{ slug: string }>();
   const service = slug ? servicesData[slug] : null;
+
+  useSEO({
+    title: service ? `${service.title} - ${service.subtitle}` : 'Serviço',
+    description: service ? service.description : 'Detalhes do serviço de casamentos.',
+    image: service ? service.image : 'https://afetos-casamentos.vercel.app/logo.jpg'
+  });
 
   if (!service) {
     return (
