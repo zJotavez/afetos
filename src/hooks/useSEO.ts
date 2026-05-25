@@ -33,18 +33,24 @@ export function useSEO({ title, description, image, url }: SEOProps) {
     // 3. Open Graph (Facebook/Social Media)
     updateMetaTag('property', 'og:title', fullTitle, true);
     updateMetaTag('property', 'og:description', description, true);
-    if (image) {
-      updateMetaTag('property', 'og:image', image, true);
-    }
+    
+    // Resolve imagem absoluta de forma robusta para os crawlers
+    const absoluteImage = image 
+      ? (image.startsWith('http') ? image : `${window.location.origin}${image}`)
+      : `${window.location.origin}/logo.jpg`;
+
+    updateMetaTag('property', 'og:image', absoluteImage, true);
+    
     if (url) {
-      updateMetaTag('property', 'og:url', url, true);
+      const absoluteUrl = url.startsWith('http') ? url : `${window.location.origin}${url}`;
+      updateMetaTag('property', 'og:url', absoluteUrl, true);
+    } else {
+      updateMetaTag('property', 'og:url', window.location.origin, true);
     }
 
     // 4. Twitter Card
     updateMetaTag('name', 'twitter:title', fullTitle);
     updateMetaTag('name', 'twitter:description', description);
-    if (image) {
-      updateMetaTag('name', 'twitter:image', image);
-    }
+    updateMetaTag('name', 'twitter:image', absoluteImage);
   }, [title, description, image, url]);
 }

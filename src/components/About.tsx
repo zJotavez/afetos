@@ -7,7 +7,7 @@ export function About() {
   useSEO({
     title: "Sobre Nós",
     description: "Conheça a história por trás das lentes da Afetos. Jader Figueiredo e sua equipe de alta costura fotográfica e cinematográfica registrando o amor real.",
-    image: "https://afetos-casamentos.vercel.app/logo.jpg"
+    image: "/logo.jpg"
   });
   return (
     <div className="w-full pb-20 bg-brand-ice">

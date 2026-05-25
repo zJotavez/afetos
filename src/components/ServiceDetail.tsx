@@ -112,7 +112,7 @@ export function ServiceDetail() {
   useSEO({
     title: service ? `${service.title} - ${service.subtitle}` : 'Serviço',
     description: service ? service.description : 'Detalhes do serviço de casamentos.',
-    image: service ? service.image : 'https://afetos-casamentos.vercel.app/logo.jpg'
+    image: service ? service.image : '/logo.jpg'
   });
 
   if (!service) {

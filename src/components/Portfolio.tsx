@@ -7,7 +7,7 @@ export function Portfolio() {
   useSEO({
     title: "Galeria Cinematográfica",
     description: "Navegue pelo nosso acervo de memórias e trabalhos de casamentos eternizados em filmes e fotografias fine art por Jader Figueiredo.",
-    image: "https://afetos-casamentos.vercel.app/logo.jpg"
+    image: "/logo.jpg"
   });
   const categories = ["Todos", "Wedding Film", "Casamento", "Pré-Wedding", "Elopement"];
   const [activeCategory, setActiveCategory] = React.useState("Todos");

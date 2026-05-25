@@ -8,7 +8,7 @@ export function Contact() {
   useSEO({
     title: "Inicie Sua Jornada",
     description: "Entre em contato com Jader Figueiredo e a equipe Afetos para verificar disponibilidade e solicitar orçamentos para o seu casamento.",
-    image: "https://afetos-casamentos.vercel.app/logo.jpg"
+    image: "/logo.jpg"
   });
   return (
     <div className="w-full min-h-screen bg-brand-ice pt-32 pb-20 relative overflow-hidden">

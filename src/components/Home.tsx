@@ -11,7 +11,7 @@ export function Home() {
   useSEO({
     title: "Eternizando Histórias Reais",
     description: "Afetos Eternos - Fotografia e Cinematografia de casamento Fine Art por Jader Figueiredo. Registramos sentimentos espontâneos com sensibilidade e estética cinematográfica nobre.",
-    image: "https://afetos-casamentos.vercel.app/logo.jpg"
+    image: "/logo.jpg"
   });
 
   return (
