@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://afetos-casamentos.vercel.app/sitemap.xml
