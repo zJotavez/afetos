@@ -21,8 +21,8 @@ export function Home() {
         {/* Background YouTube Video */}
         <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-0">
           <iframe
-            src="https://www.youtube.com/embed/wn_N5Xh3OM8?autoplay=1&mute=1&loop=1&playlist=wn_N5Xh3OM8&controls=0&showinfo=0&rel=0&playsinline=1&enablejsapi=1&iv_load_policy=3"
-            className="absolute top-1/2 left-1/2 w-[100vw] h-[56.25vw] min-h-[100vh] min-w-[177.77vh] -translate-x-1/2 -translate-y-1/2 object-cover opacity-[0.88] scale-[1.35]"
+            src="https://www.youtube.com/embed/wn_N5Xh3OM8?autoplay=1&mute=1&loop=1&playlist=wn_N5Xh3OM8&controls=0&showinfo=0&rel=0&playsinline=1&enablejsapi=1&iv_load_policy=3&vq=hd1080"
+            className="absolute top-1/2 left-1/2 w-[100vw] h-[56.25vw] min-h-[100vh] min-w-[177.77vh] -translate-x-1/2 -translate-y-1/2 object-cover opacity-[0.88] scale-[1.12] md:scale-[1.35]"
             allow="autoplay; encrypted-media"
             frameBorder="0"
             title="Background Video"
@@ -50,7 +50,7 @@ export function Home() {
               <FadeIn direction="up" delay={0.8}>
                 <div className="flex flex-col items-start gap-6 mb-8">
                   {/* Logo circular com CSS mask para remover o fundo escuro */}
-                  <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-brand-gold/30 shadow-[0_15px_40px_rgba(180,151,90,0.15)] relative bg-white transition-transform duration-500 hover:scale-105">
+                  <div className="hidden md:block w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-brand-gold/30 shadow-[0_15px_40px_rgba(180,151,90,0.15)] relative bg-white transition-transform duration-500 hover:scale-105">
                     <img 
                       src="/logo.jpg" 
                       alt="Afetos" 
@@ -428,11 +428,11 @@ export function Home() {
           </FadeIn>
 
           {/* Beautiful 3-Column Masonry Mosaico */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
             {/* Column 1 */}
-            <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-4 md:gap-8">
               <FadeIn direction="up" delay={0.1}>
-                <div className="group relative overflow-hidden bg-brand-nude border-[10px] border-white shadow-xl aspect-[3/4]">
+                <div className="group relative overflow-hidden bg-brand-nude border-4 md:border-[10px] border-white shadow-xl aspect-[3/4]">
                   <div className="absolute inset-0 bg-brand-sand mix-blend-multiply opacity-15 z-10 group-hover:opacity-30 transition-opacity duration-500"></div>
                   <img 
                     src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2669&auto=format&fit=crop" 
@@ -442,7 +442,7 @@ export function Home() {
                 </div>
               </FadeIn>
               <FadeIn direction="up" delay={0.2}>
-                <div className="group relative overflow-hidden bg-brand-nude border-[10px] border-white shadow-xl aspect-square">
+                <div className="group relative overflow-hidden bg-brand-nude border-4 md:border-[10px] border-white shadow-xl aspect-square">
                   <div className="absolute inset-0 bg-brand-sand mix-blend-multiply opacity-15 z-10 group-hover:opacity-30 transition-opacity duration-500"></div>
                   <img 
                     src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2670&auto=format&fit=crop" 
@@ -454,9 +454,9 @@ export function Home() {
             </div>
 
             {/* Column 2 (Y Shifted) */}
-            <div className="flex flex-col gap-8 md:translate-y-12">
+            <div className="flex flex-col gap-4 md:gap-8 md:translate-y-12">
               <FadeIn direction="up" delay={0.3}>
-                <div className="group relative overflow-hidden bg-brand-nude border-[10px] border-white shadow-xl aspect-square">
+                <div className="group relative overflow-hidden bg-brand-nude border-4 md:border-[10px] border-white shadow-xl aspect-square">
                   <div className="absolute inset-0 bg-brand-sand mix-blend-multiply opacity-15 z-10 group-hover:opacity-30 transition-opacity duration-500"></div>
                   <img 
                     src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=2670&auto=format&fit=crop" 
@@ -466,7 +466,7 @@ export function Home() {
                 </div>
               </FadeIn>
               <FadeIn direction="up" delay={0.4}>
-                <div className="group relative overflow-hidden bg-brand-nude border-[10px] border-white shadow-xl aspect-[3/4]">
+                <div className="group relative overflow-hidden bg-brand-nude border-4 md:border-[10px] border-white shadow-xl aspect-[3/4]">
                   <div className="absolute inset-0 bg-brand-sand mix-blend-multiply opacity-15 z-10 group-hover:opacity-30 transition-opacity duration-500"></div>
                   <img 
                     src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?q=80&w=2574&auto=format&fit=crop" 
@@ -478,9 +478,9 @@ export function Home() {
             </div>
 
             {/* Column 3 */}
-            <div className="flex flex-col gap-8">
-              <FadeIn direction="up" delay={0.5}>
-                <div className="group relative overflow-hidden bg-brand-nude border-[10px] border-white shadow-xl aspect-[3/4]">
+            <div className="flex flex-col gap-4 md:gap-8 col-span-2 md:col-span-1 grid grid-cols-2 md:flex md:flex-col">
+              <FadeIn direction="up" delay={0.5} className="w-full">
+                <div className="group relative overflow-hidden bg-brand-nude border-4 md:border-[10px] border-white shadow-xl aspect-[3/4] w-full">
                   <div className="absolute inset-0 bg-brand-sand mix-blend-multiply opacity-15 z-10 group-hover:opacity-30 transition-opacity duration-500"></div>
                   <img 
                     src="https://images.unsplash.com/photo-1583939000340-9602e1c944ad?q=80&w=2687&auto=format&fit=crop" 
@@ -489,8 +489,8 @@ export function Home() {
                   />
                 </div>
               </FadeIn>
-              <FadeIn direction="up" delay={0.6}>
-                <div className="group relative overflow-hidden bg-brand-nude border-[10px] border-white shadow-xl aspect-square">
+              <FadeIn direction="up" delay={0.6} className="w-full">
+                <div className="group relative overflow-hidden bg-brand-nude border-4 md:border-[10px] border-white shadow-xl aspect-square w-full">
                   <div className="absolute inset-0 bg-brand-sand mix-blend-multiply opacity-15 z-10 group-hover:opacity-30 transition-opacity duration-500"></div>
                   <img 
                     src="https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=2670&auto=format&fit=crop" 
@@ -505,7 +505,7 @@ export function Home() {
       </section>
 
       {/* Jader Figueiredo Biography Section */}
-      <section className="py-32 bg-brand-nude/30 relative overflow-hidden border-t border-brand-sand/50">
+      <section className="py-20 md:py-32 bg-brand-nude/30 relative overflow-hidden border-t border-brand-sand/50">
         {/* Abstract geometrical background */}
         <div className="absolute top-1/2 left-0 w-48 h-[1px] bg-brand-gold/30"></div>
         <div className="absolute right-12 bottom-12 w-32 h-32 rounded-full border border-brand-gold/10"></div>
@@ -516,7 +516,7 @@ export function Home() {
             {/* Foto Coluna */}
             <div className="lg:col-span-5 flex justify-center">
               <FadeIn direction="right">
-                <div className="relative w-full max-w-[320px] aspect-[3/4] bg-white border-[12px] border-white shadow-[0_20px_50px_rgba(0,0,0,0.18)]">
+                <div className="relative w-full max-w-[320px] aspect-[3/4] bg-white border-4 md:border-[12px] border-white shadow-[0_20px_50px_rgba(0,0,0,0.18)]">
                    <div className="absolute inset-0 bg-brand-sand mix-blend-multiply opacity-[0.05]"></div>
                    <img 
                      src="/jader.jpg" 
@@ -596,20 +596,20 @@ export function Home() {
       </section>
 
       {/* Package / CTA Closing Card */}
-      <section className="py-32 bg-brand-ice relative overflow-hidden border-t border-brand-sand/50">
+      <section className="py-20 md:py-32 bg-brand-ice relative overflow-hidden border-t border-brand-sand/50">
         <div className="absolute top-1/2 right-0 w-32 h-[1px] bg-brand-gold/20"></div>
         <div className="absolute top-12 left-12 w-20 h-20 rounded-full border border-brand-gold/5"></div>
         
         <div className="container mx-auto px-6 max-w-4xl relative z-10">
           <FadeIn direction="up">
-            <div className="bg-[#F2EBE3] border-[12px] border-white p-8 md:p-16 shadow-[0_30px_70px_rgba(0,0,0,0.12)] text-center relative rounded-none">
+            <div className="bg-[#F2EBE3] border-4 md:border-[12px] border-white p-5 md:p-16 shadow-[0_30px_70px_rgba(0,0,0,0.12)] text-center relative rounded-none">
               
               {/* Accent corner borders */}
-              <div className="absolute top-6 left-6 w-8 h-8 border-t-2 border-l-2 border-brand-gold/30"></div>
-              <div className="absolute bottom-6 right-6 w-8 h-8 border-b-2 border-r-2 border-brand-gold/30"></div>
+              <div className="absolute top-4 left-4 md:top-6 md:left-6 w-6 h-6 md:w-8 md:h-8 border-t-2 border-l-2 border-brand-gold/30"></div>
+              <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 w-6 h-6 md:w-8 md:h-8 border-b-2 border-r-2 border-brand-gold/30"></div>
 
               <span className="text-brand-gold text-[10px] tracking-[0.5em] uppercase font-bold">Agendamento & Vagas</span>
-              <h2 className="text-4xl md:text-5xl font-serif text-[#2D2926] italic mt-2 mb-6">Pronto para eternizar sua história?</h2>
+              <h2 className="text-3xl md:text-5xl font-serif text-[#2D2926] italic mt-2 mb-6">Pronto para eternizar sua história?</h2>
               <p className="text-[#5A5550] max-w-lg mx-auto font-sans font-light text-sm md:text-base leading-relaxed mb-10 italic">
                 Aceitamos apenas um número restrito de casamentos por temporada para garantir a dedicação máxima e exclusiva que a sua história merece. Entre em contato para verificar nossa disponibilidade.
               </p>

@@ -42,7 +42,7 @@ export function Navbar() {
       >
         <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <Link to="/" className="w-10 h-10 rounded-full overflow-hidden border border-brand-gold/20 shadow-md relative bg-white block">
+            <Link to="/" className="w-10 h-10 rounded-full overflow-hidden border border-brand-gold/20 shadow-md relative bg-white hidden md:block">
               <img 
                 src="/logo.jpg" 
                 alt="Afetos" 
@@ -106,12 +106,25 @@ export function Navbar() {
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
             className="fixed inset-0 z-40 bg-brand-ice flex flex-col justify-center items-center h-screen w-full md:hidden"
           >
-            <div className="flex flex-col items-center space-y-8 absolute top-[25%] w-full">
+            <div className="flex flex-col items-center space-y-5 absolute top-[12%] w-full">
+               {/* Logo circular destacada no topo do menu mobile */}
+               <motion.div
+                 initial={{ opacity: 0, scale: 0.8 }}
+                 animate={{ opacity: 1, scale: 1 }}
+                 transition={{ delay: 0.1 }}
+                 className="w-20 h-20 rounded-full overflow-hidden border border-brand-gold/20 shadow-xl relative bg-white"
+               >
+                 <img 
+                   src="/logo.jpg" 
+                   alt="Afetos Logo" 
+                   className="w-full h-full object-cover scale-[1.35]" 
+                 />
+               </motion.div>
                <motion.span 
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ delay: 0.1 }}
-                  className="font-serif text-brand-gold text-sm tracking-widest mb-8"
+                  transition={{ delay: 0.2 }}
+                  className="font-serif text-brand-gold text-xs tracking-[0.4em] uppercase"
                 >
                   MENU
                 </motion.span>
