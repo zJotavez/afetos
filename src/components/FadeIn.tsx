@@ -9,6 +9,7 @@ interface FadeInProps {
   direction?: 'up' | 'down' | 'left' | 'right' | 'none';
   distance?: number;
   viewMargin?: string;
+  key?: React.Key;
 }
 
 export function FadeIn({

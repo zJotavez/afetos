@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { FadeIn } from './FadeIn';
 import { useSEO } from '../hooks/useSEO';
@@ -17,7 +18,7 @@ export function Home() {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="relative h-screen w-full overflow-hidden bg-brand-ice flex items-center">
+      <section className="relative min-h-screen md:h-screen w-full overflow-hidden bg-brand-ice flex items-center pt-28 pb-16 md:py-0">
         {/* Background YouTube Video */}
         <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-0">
           <iframe
@@ -288,27 +289,33 @@ export function Home() {
                   
                   {/* Photo Component */}
                   <div className={`lg:col-span-6 ${service.alignRight ? "lg:order-2" : "lg:order-1"}`}>
-                    <div className="relative group overflow-hidden bg-brand-nude border-[12px] border-white shadow-2xl rounded-none aspect-[16/10]">
-                       <div className="absolute inset-0 bg-brand-sand mix-blend-multiply opacity-15 z-10 transition-opacity duration-500 group-hover:opacity-35" />
-                       <img 
-                         src={service.img} 
-                         alt={service.title} 
-                         className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" 
-                       />
-                    </div>
+                    <Link to={`/servico/${service.id}`} className="block group">
+                      <div className="relative overflow-hidden bg-brand-nude border-[12px] border-white shadow-2xl rounded-none aspect-[16/10] cursor-pointer">
+                         <div className="absolute inset-0 bg-brand-sand mix-blend-multiply opacity-15 z-10 transition-opacity duration-500 group-hover:opacity-35" />
+                         <img 
+                           src={service.img} 
+                           alt={service.title} 
+                           className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" 
+                         />
+                      </div>
+                    </Link>
                   </div>
 
                   {/* Text Component */}
                   <div className={`lg:col-span-6 ${service.alignRight ? "lg:order-1 text-left" : "lg:order-2 text-left"}`}>
                     <span className="text-brand-gold text-[10px] tracking-[0.4em] uppercase font-bold">{service.subtitle}</span>
-                    <h3 className="text-3xl md:text-5xl font-serif text-[#2D2926] mt-2 mb-6 italic">{service.title}</h3>
+                    <Link to={`/servico/${service.id}`} className="block group w-fit">
+                      <h3 className="text-3xl md:text-5xl font-serif text-[#2D2926] mt-2 mb-6 italic hover:text-brand-gold transition-colors duration-300 cursor-pointer">
+                        {service.title}
+                      </h3>
+                    </Link>
                     <p className="text-[#5A5550] font-sans font-light italic leading-relaxed text-base mb-8">{service.desc}</p>
-                    <a 
-                      href={`/servico/${service.id}`} 
+                    <Link 
+                      to={`/servico/${service.id}`} 
                       className="inline-block border-b border-[#2D2926] pb-1 text-[10px] tracking-[0.3em] font-bold uppercase hover:text-brand-gold hover:border-brand-gold transition-all duration-300"
                     >
                       Descobrir Experiência &rarr;
-                    </a>
+                    </Link>
                   </div>
 
                 </div>
