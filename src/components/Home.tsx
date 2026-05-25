@@ -645,7 +645,7 @@ export function Home() {
                     type="submit" 
                     className="w-full py-4 bg-[#2D2926] text-[#FAF9F6] text-[10px] tracking-[0.3em] uppercase font-bold hover:bg-brand-gold hover:text-white transition-all duration-300 shadow-xl cursor-pointer"
                   >
-                    Solicitar Orçamento de Herança &rarr;
+                    Solicitar Orçamento
                   </button>
                 </div>
               </form>
